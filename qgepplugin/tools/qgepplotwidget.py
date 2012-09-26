@@ -28,6 +28,7 @@ from matplotlib.figure import Figure
 from matplotlib.ticker import ScalarFormatter
 from matplotlib.backends.backend_qt4agg import FigureCanvasQTAgg
 import matplotlib.lines as lines
+from qgis.core import QgsFeature, QgsMapLayerRegistry
 
 class QgepPlotWidget( QWidget ):
     
@@ -83,7 +84,14 @@ class QgepPlotWidget( QWidget ):
         
     def onPick( self, event ):
         if ( len( event.ind ) > 0 ):
-            self.profile.getOffsetArray()
+            node = self.profile.getMasl(event.ind[0])
+            featId = node['featId']
+            nodeLayer = self.profile.getNetworkManager().getNodeLayer()
+            feat = QgsFeature()
+            nodeLayer.featureAtId( featId, feat )
+            identify = QgsIdentifyResults( mCanvas, mCanvas->window() )
+            identify.addFeature( nodeLayer, feat, [] )
+            identify.show()
         
 class HighlightSelected(lines.VertexSelector):
     def __init__(self, line, fmt='ro', **kwargs):

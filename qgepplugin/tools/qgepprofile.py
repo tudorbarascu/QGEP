@@ -27,7 +27,8 @@ from PyQt4.QtCore import QObject
 from copy import copy
 
 class QgepProfile( QObject ):
-    def __init__( self, points=[] ):
+    def __init__( self, networkManager, points=[] ):
+        self.networkManager = networkManager
         self.points = points
         
     def copy( self ):
@@ -49,8 +50,14 @@ class QgepProfile( QObject ):
     def getMaslArray(self):
         return [ point[1] for point in self.points ]
     
+    def getMasl(self,index):
+        return self.points[index][1]
+    
     def getPropsArray(self):
         return [ point[2] for point in self.points ]
     
     def reset(self):
         self.points = []
+        
+    def getNetworkManager(self):
+        return self.networkManager

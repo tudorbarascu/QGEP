@@ -146,6 +146,8 @@ class QgepNetworkAnalyzer():
         # For progress dialog
         currentFeatureCount = 0
         featureCount = dataProvider.featureCount()
+        if featureCount == 0: # Avoid division by zero
+            featureCount = 1
         
         newEdges = []
         graphNodes = self.graph.nodes(True)
