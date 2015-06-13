@@ -13,6 +13,7 @@ value_fr character varying(50),
 abbr_en character varying(3),
 abbr_de character varying(3),
 abbr_fr character varying(3),
+abbr_ro character varying(3),
 active boolean,
 CONSTRAINT pkey_qgep_value_list_code PRIMARY KEY (code)
 )
@@ -34,11 +35,11 @@ CREATE SEQUENCE qgep.seq_od_mutation_oid INCREMENT 1 MINVALUE 0 MAXVALUE 999999 
  ALTER TABLE qgep.od_mutation ALTER COLUMN obj_id SET DEFAULT qgep.generate_oid('od_mutation');
 COMMENT ON COLUMN qgep.od_mutation.obj_id IS 'INTERLIS STANDARD OID (with Postfix/Präfix) or UUOID, see www.interlis.ch';
  ALTER TABLE qgep.od_mutation ADD COLUMN attribute  varchar(50) ;
-COMMENT ON COLUMN qgep.od_mutation.attribute IS 'Attribute name of chosen object / Attributname des gewählten Objektes / Nom de l''attribut de l''objet à sélectionner';
+COMMENT ON COLUMN qgep.od_mutation.attribute IS 'Attribute name of chosen object / Attributname des gewählten Objektes / Nom de l''attribut de l''objet à sélectionner / Numele atribut al obiectului selectat';
  ALTER TABLE qgep.od_mutation ADD COLUMN class  varchar(50) ;
-COMMENT ON COLUMN qgep.od_mutation.class IS 'Class name of chosen object / Klassenname des gewählten Objektes / Nom de classe de l''objet à sélectionner';
+COMMENT ON COLUMN qgep.od_mutation.class IS 'Class name of chosen object / Klassenname des gewählten Objektes / Nom de classe de l''objet à sélectionner / Numele clasei obiectului selectat';
  ALTER TABLE qgep.od_mutation ADD COLUMN date_mutation  timestamp without time zone ;
-COMMENT ON COLUMN qgep.od_mutation.date_mutation IS 'if changed: Date/Time of changement. If deleted date/time of deleting / Bei geaendert Datum/Zeit der Änderung. Bei gelöscht Datum/Zeit der Löschung / changée: Date/Temps du changement. effacée: Date/Temps de la suppression';
+COMMENT ON COLUMN qgep.od_mutation.date_mutation IS 'if changed: Date/Time of changement. If deleted date/time of deleting / Bei geaendert Datum/Zeit der Änderung. Bei gelöscht Datum/Zeit der Löschung / changée: Date/Temps du changement. effacée: Date/Temps de la suppression / la modificare: Data/Timpul schimbării; la ştergere: Data/Timpul ştergerii';
  ALTER TABLE qgep.od_mutation ADD COLUMN date_time  timestamp without time zone ;
 COMMENT ON COLUMN qgep.od_mutation.date_time IS 'Date/Time of collecting data in the field. Else Date/Time of creating data set on the system / Datum/Zeit der Aufnahme im Feld falls vorhanden bei erstellt. Sonst Datum/Uhrzeit der Erstellung auf dem System / Date/temps de la relève, sinon date/temps de création dans le système';
  ALTER TABLE qgep.od_mutation ADD COLUMN kind  integer ;
