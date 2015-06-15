@@ -41,25 +41,25 @@ COMMENT ON COLUMN qgep.od_mutation.class IS 'Class name of chosen object / Klass
  ALTER TABLE qgep.od_mutation ADD COLUMN date_mutation  timestamp without time zone ;
 COMMENT ON COLUMN qgep.od_mutation.date_mutation IS 'if changed: Date/Time of changement. If deleted date/time of deleting / Bei geaendert Datum/Zeit der Änderung. Bei gelöscht Datum/Zeit der Löschung / changée: Date/Temps du changement. effacée: Date/Temps de la suppression / la modificare: Data/Timpul schimbării; la ştergere: Data/Timpul ştergerii';
  ALTER TABLE qgep.od_mutation ADD COLUMN date_time  timestamp without time zone ;
-COMMENT ON COLUMN qgep.od_mutation.date_time IS 'Date/Time of collecting data in the field. Else Date/Time of creating data set on the system / Datum/Zeit der Aufnahme im Feld falls vorhanden bei erstellt. Sonst Datum/Uhrzeit der Erstellung auf dem System / Date/temps de la relève, sinon date/temps de création dans le système';
+COMMENT ON COLUMN qgep.od_mutation.date_time IS 'Date/Time of collecting data in the field. Else Date/Time of creating data set on the system / Datum/Zeit der Aufnahme im Feld falls vorhanden bei erstellt. Sonst Datum/Uhrzeit der Erstellung auf dem System / Date/temps de la relève, sinon date/temps de création dans le système / Data/Timpul colectării din teren; altfel, Data/Timpul introducerii in sistem';
  ALTER TABLE qgep.od_mutation ADD COLUMN kind  integer ;
-COMMENT ON COLUMN qgep.od_mutation.kind IS 'Date/Time of collecting data in the field. Else Date/Time of creating data set on the system / Datum/Zeit der Aufnahme im Feld falls vorhanden bei erstellt. Sonst Datum/Uhrzeit der Erstellung auf dem System / Date/temps de la relève, sinon date/temps de création dans le système';
+COMMENT ON COLUMN qgep.od_mutation.kind IS 'Date/Time of collecting data in the field. Else Date/Time of creating data set on the system / Datum/Zeit der Aufnahme im Feld falls vorhanden bei erstellt. Sonst Datum/Uhrzeit der Erstellung auf dem System / Date/temps de la relève, sinon date/temps de création dans le système / Data/Timpul colectării din teren; altfel, Data/Timpul introducerii in sistem';
  ALTER TABLE qgep.od_mutation ADD COLUMN last_value  varchar(100) ;
-COMMENT ON COLUMN qgep.od_mutation.last_value IS 'last_value changed to text. Only with type=changed and deleted / Letzter Wert umgewandelt in Text. Nur bei ART=geaendert oder geloescht / Dernière valeur modifiée du texte. Seulement avec GENRE = changee ou effacee';
+COMMENT ON COLUMN qgep.od_mutation.last_value IS 'last_value changed to text. Only with type=changed and deleted / Letzter Wert umgewandelt in Text. Nur bei ART=geaendert oder geloescht / Dernière valeur modifiée du texte. Seulement avec GENRE = changee ou effacee / ultima_valoare schimbată a textului';
  ALTER TABLE qgep.od_mutation ADD COLUMN object  varchar(20) ;
-COMMENT ON COLUMN qgep.od_mutation.object IS 'OBJ_ID of Object / OBJ_ID des Objektes / OBJ_ID de l''objet';
+COMMENT ON COLUMN qgep.od_mutation.object IS 'OBJ_ID of Object / OBJ_ID des Objektes / OBJ_ID de l''objet / OBJ_ID''ul obiectului';
  ALTER TABLE qgep.od_mutation ADD COLUMN recorded_by  varchar(80) ;
-COMMENT ON COLUMN qgep.od_mutation.recorded_by IS 'Name of person who recorded the dataset / Name des Aufnehmers im Feld / Nom de la personne, qui a relevé les données';
+COMMENT ON COLUMN qgep.od_mutation.recorded_by IS 'Name of person who recorded the dataset / Name des Aufnehmers im Feld / Nom de la personne, qui a relevé les données / Numele persoanei care a colectat datele';
  ALTER TABLE qgep.od_mutation ADD COLUMN remark  varchar(80) ;
-COMMENT ON COLUMN qgep.od_mutation.remark IS 'General remarks / Allgemeine Bemerkungen / Remarques générales';
+COMMENT ON COLUMN qgep.od_mutation.remark IS 'General remarks / Allgemeine Bemerkungen / Remarques générales / Remarci generale';
  ALTER TABLE qgep.od_mutation ADD COLUMN system_user  varchar(20) ;
-COMMENT ON COLUMN qgep.od_mutation.system_user IS 'Name of system user / Name des Systembenutzers / Usager du système informatique';
+COMMENT ON COLUMN qgep.od_mutation.system_user IS 'Name of system user / Name des Systembenutzers / Usager du système informatique / Numele utilizatorului de sistem';
  ALTER TABLE qgep.od_mutation ADD COLUMN last_modification timestamp without time zone ;
-COMMENT ON COLUMN qgep.od_mutation.last_modification IS 'Last modification / Letzte_Aenderung / Derniere_modification: INTERLIS_1_DATE';
+COMMENT ON COLUMN qgep.od_mutation.last_modification IS 'Last modification / Letzte_Aenderung / Derniere_modification: INTERLIS_1_DATE / Ultima modificare';
  ALTER TABLE qgep.od_mutation ADD COLUMN dataowner varchar(80) ;
-COMMENT ON COLUMN qgep.od_mutation.dataowner IS 'Metaattribute dataowner - this is the person or body who is allowed to delete, change or maintain this object / Metaattribut Datenherr ist diejenige Person oder Stelle, die berechtigt ist, diesen Datensatz zu löschen, zu ändern bzw. zu verwalten / Maître des données gestionnaire de données, qui est la personne ou l''organisation autorisée pour gérer, modifier ou supprimer les données de cette table/classe';
+COMMENT ON COLUMN qgep.od_mutation.dataowner IS 'Metaattribute dataowner - this is the person or body who is allowed to delete, change or maintain this object / Metaattribut Datenherr ist diejenige Person oder Stelle, die berechtigt ist, diesen Datensatz zu löschen, zu ändern bzw. zu verwalten / Maître des données gestionnaire de données, qui est la personne ou l''organisation autorisée pour gérer, modifier ou supprimer les données de cette table/classe / Persoana sau grupul care gestionează datele - aceasteia/acestuia îi este permis să şteargă, schimbe sau să ofere mentenanţă acestui obiect/tabelă/clasă';
  ALTER TABLE qgep.od_mutation ADD COLUMN provider varchar(80) ;
-COMMENT ON COLUMN qgep.od_mutation.provider IS 'Metaattribute provider - this is the person or body who delivered the data / Metaattribut Datenlieferant ist diejenige Person oder Stelle, die die Daten geliefert hat / FOURNISSEUR DES DONNEES Organisation qui crée lenregistrement de ces données ';
+COMMENT ON COLUMN qgep.od_mutation.provider IS 'Metaattribute provider - this is the person or body who delivered the data / Metaattribut Datenlieferant ist diejenige Person oder Stelle, die die Daten geliefert hat / FOURNISSEUR DES DONNEES Organisation qui crée lenregistrement de ces données / Furnizorul de date - persoana sau grupul care a furnizat datele';
 -------
 CREATE TABLE qgep.txt_text
 (
@@ -74,11 +74,11 @@ CREATE SEQUENCE qgep.seq_txt_text_oid INCREMENT 1 MINVALUE 0 MAXVALUE 999999 STA
  ALTER TABLE qgep.txt_text ALTER COLUMN obj_id SET DEFAULT qgep.generate_oid('txt_text');
 COMMENT ON COLUMN qgep.txt_text.obj_id IS 'INTERLIS STANDARD OID (with Postfix/Präfix) or UUOID, see www.interlis.ch';
  ALTER TABLE qgep.txt_text ADD COLUMN last_modification timestamp without time zone ;
-COMMENT ON COLUMN qgep.txt_text.last_modification IS 'Last modification / Letzte_Aenderung / Derniere_modification: INTERLIS_1_DATE';
+COMMENT ON COLUMN qgep.txt_text.last_modification IS 'Last modification / Letzte_Aenderung / Derniere_modification: INTERLIS_1_DATE / Ultima modificare';
  ALTER TABLE qgep.txt_text ADD COLUMN dataowner varchar(80) ;
-COMMENT ON COLUMN qgep.txt_text.dataowner IS 'Metaattribute dataowner - this is the person or body who is allowed to delete, change or maintain this object / Metaattribut Datenherr ist diejenige Person oder Stelle, die berechtigt ist, diesen Datensatz zu löschen, zu ändern bzw. zu verwalten / Maître des données gestionnaire de données, qui est la personne ou l''organisation autorisée pour gérer, modifier ou supprimer les données de cette table/classe';
+COMMENT ON COLUMN qgep.txt_text.dataowner IS 'Metaattribute dataowner - this is the person or body who is allowed to delete, change or maintain this object / Metaattribut Datenherr ist diejenige Person oder Stelle, die berechtigt ist, diesen Datensatz zu löschen, zu ändern bzw. zu verwalten / Maître des données gestionnaire de données, qui est la personne ou l''organisation autorisée pour gérer, modifier ou supprimer les données de cette table/classe / Persoana sau grupul care gestionează datele - aceasteia/acestuia îi este permis să şteargă, schimbe sau să ofere mentenanţă acestui obiect/tabelă/clasă';
  ALTER TABLE qgep.txt_text ADD COLUMN provider varchar(80) ;
-COMMENT ON COLUMN qgep.txt_text.provider IS 'Metaattribute provider - this is the person or body who delivered the data / Metaattribut Datenlieferant ist diejenige Person oder Stelle, die die Daten geliefert hat / FOURNISSEUR DES DONNEES Organisation qui crée lenregistrement de ces données ';
+COMMENT ON COLUMN qgep.txt_text.provider IS 'Metaattribute provider - this is the person or body who delivered the data / Metaattribut Datenlieferant ist diejenige Person oder Stelle, die die Daten geliefert hat / FOURNISSEUR DES DONNEES Organisation qui crée lenregistrement de ces données / Furnizorul de date - persoana sau grupul care a furnizat datele';
 -------
 CREATE TABLE qgep.od_organisation
 (
@@ -94,7 +94,7 @@ CREATE SEQUENCE qgep.seq_od_organisation_oid INCREMENT 1 MINVALUE 0 MAXVALUE 999
 COMMENT ON COLUMN qgep.od_organisation.obj_id IS 'INTERLIS STANDARD OID (with Postfix/Präfix) or UUOID, see www.interlis.ch';
  ALTER TABLE qgep.od_organisation ADD COLUMN identifier  varchar(80) ;
  CREATE UNIQUE INDEX in_od_organisation_identifier ON qgep.od_organisation USING btree (identifier);
-COMMENT ON COLUMN qgep.od_organisation.identifier IS 'It is suggested to use real names, e.g. Sample_Community and not only Community. Or "Waste Water Association WWTP Example" and not only Waste Water Association because there will be multiple objects / Es wird empfohlen reale Namen zu nehmen, z.B. Mustergemeinde und nicht Gemeinde. Oder Abwasserverband ARA Muster und nicht nur Abwasserverband, da es sonst Probleme gibt bei der Zusammenführung der Daten. / Utilisez les noms réels, par ex. commune "exemple" et pas seulement commune. Ou "Association pour l''épuration des eaux usées STEP XXX" et pas seulement  Association pour l''épuration des eaux usées. Sinon vous risquer des problèmes en réunissant les donnée';
+COMMENT ON COLUMN qgep.od_organisation.identifier IS 'It is suggested to use real names, e.g. Sample_Community and not only Community. Or "Waste Water Association WWTP Example" and not only Waste Water Association because there will be multiple objects / Es wird empfohlen reale Namen zu nehmen, z.B. Mustergemeinde und nicht Gemeinde. Oder Abwasserverband ARA Muster und nicht nur Abwasserverband, da es sonst Probleme gibt bei der Zusammenführung der Daten. / Utilisez les noms réels, par ex. commune "exemple" et pas seulement commune. Ou "Association pour l''épuration des eaux usées STEP XXX" et pas seulement  Association pour l''épuration des eaux usées. Sinon vous risquer des problèmes en réunissant les donnée / Este indicat a se folosi nume reale/specifice, de ex.: "consiliul local Râmnicu Vâlcea" în loc de "consiliul local" sau "Asociaţia apei ARA" în loc de "Asociaţia apei"';
  ALTER TABLE qgep.od_organisation ADD COLUMN remark  varchar(80) ;
 COMMENT ON COLUMN qgep.od_organisation.remark IS 'yyy Fehler bei Zuordnung / Allgemeine Bemerkungen / Remarques générales';
  ALTER TABLE qgep.od_organisation ADD COLUMN uid  varchar(12) ;
